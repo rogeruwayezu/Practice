@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import Themes from './screens/Themes';
+import Navigator from './config/routes';
 
 EStyleSheet.build({
     $primaryOrange: '#D57A66',
@@ -17,4 +17,4 @@ EStyleSheet.build({
     $darkText: '#343434',
 });
 
-export default () => <Themes />;
+export default () => <Navigator />;
