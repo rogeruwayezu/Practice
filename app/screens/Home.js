@@ -34,13 +34,13 @@ handleSwapCurrency = () =>{
 };
 
 handleOptionsPress = () => {
-  console.log('handle options press');
+  this.props.navigation.navigate('Options');
 };
   render() {
     return (
         <Container>
           <StatusBar translucent={false} barStyle="light-content" />
-          <Header onPres={this.handleOptionsPress} />
+          <Header onPress={this.handleOptionsPress} />
 
           <KeyboardAvoidingView behavior="padding">
           <Logo />
