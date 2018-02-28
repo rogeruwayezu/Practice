@@ -5,6 +5,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import Navigator from './config/routes';
 import  { AlertProvider } from './components/Alert';
 
+
 EStyleSheet.build({
     $primaryOrange: '#D57A66',
     $primaryGreen: '#00BD9D',
