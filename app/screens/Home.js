@@ -11,7 +11,7 @@ import { ClearButton } from '../components/Buttons';
 import { LastConverted } from '../components/Text';
 import { Header } from '../components/Header';
 
-import { swapCurrency, changeCurrencyAmount } from '../actions/currencies';
+import { swapCurrency, changeCurrencyAmount, getInitialConversion } from '../actions/currencies';
 
 
 const TEMP_CONVERSION_RATE = 0.7974;
@@ -29,13 +29,19 @@ class Home extends Component {
     lastConvertedDate: PropTypes.object,
     primaryColor: PropTypes.string,
   };
+
+  ComponentWillMount() {
+    this.props.dispatch(getInitialConversion());
+  };
+
+
   handlePressBaseCurrency = () => {
     this.props.navigation.navigate('CurrencyList', { title: 'Base Currency', type: 'base' });
   };
   handlePressQuoteCurrency = () => {
     this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency', type: 'quote' });
   };
-handleTextChange = (amount) => {
+  handleTextChange = (amount) => {
   this.props.dispatch(changeCurrencyAmount(amount));
 };
 handleSwapCurrency = () =>{
